@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+	
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.actus.nalzzang2" android:versionName="1.0.0" android:versionCode="8">
+      
+     <!--  <com.google.android.maps.MapView
+
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:clickable="true"
+		android:apiKey="API KEY" /> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+   	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.BIND_WALLPAPER" />
+	<uses-permission android:name="android.permission.SET_WALLPAPER"/>
+	<uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+	
+    <application android:icon="@drawable/cover_icon" android:label="app_name" android:debuggable="true">
+
+        <receiver android:name = ".Widget" android:label ="app_widget">
+    		<intent-filter>
+    			<action android:name = "android.appwidget.action.APPWIDGET_UPDATE"/>
+    			//widget으로 intent 보낼 때 쓰는 action
+    			<action android:name = "android.action.TO_WIDGET"/>
+			</intent-filter>
+			//위젯에서 사용할 layout.
+    		<meta-data android:name = "android.appwidget.provider" android:resource = "@xml/widget_layout"/>
+    	</receiver>
+    	
+        <activity android:name=".StartPage" android:screenOrientation="portrait" android:theme="@style/Theme.noTitle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<activity android:name=".WidgetActivity" android:screenOrientation="portrait" android:theme="@style/Theme.noTitle"/>
+	    <activity android:name="Main" android:screenOrientation="portrait" android:theme="@style/Theme.noTitle"/>
+	</application>
+	
+    <uses-sdk android:minSdkVersion="8" />
+	
+</manifest> 
