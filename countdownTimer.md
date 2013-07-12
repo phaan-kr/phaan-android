@@ -8,4 +8,4 @@ finish가 불릴때까지의 시간, 인터벌
 	    	 Log.d(CLASSTAG+"remainTime", remainTime+"");
 	     }
 	     public void onFinish() {}
-	}
+	}.start();
